@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-gray-100 antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-xl font-medium duration-200 ease-in-out flex items-center justify-center gap-2;
+  }
+
+  .btn-primary {
+    @apply bg-green-500 text-white hover:bg-green-600 active:scale-[0.98] disabled:opacity-50 disabled:hover:bg-green-500 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-800 text-gray-400 hover:bg-gray-700 active:scale-[0.98] disabled:opacity-50 disabled:hover:bg-gray-800 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 text-white hover:bg-red-600 active:scale-[0.98] disabled:opacity-50 disabled:hover:bg-red-500 disabled:cursor-not-allowed;
+  }
+
+  .card {
+    @apply bg-gray-900/50 border border-gray-800 rounded-xl p-6 transition-colors hover:border-green-500/30;
+  }
+}
+
+@layer utilities {
+  .scrollbar {
+    @apply w-2;
+  }
+
+  .scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  .scrollbar-thumb {
+    @apply bg-green-500 rounded-full hover:bg-green-600;
+  }
+
+  .glass {
+    @apply bg-gray-900/50 backdrop-blur-sm;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar {
+  @apply scrollbar;
+}
+
+::-webkit-scrollbar-track {
+  @apply scrollbar-track;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply scrollbar-thumb;
+}
